@@ -5,8 +5,8 @@ import { QuizController } from './quiz.controller';
 import { QuizService } from './quiz.service';
 
 @Module({
-  imports: [ MongooseModule.forFeature([{ name: 'Quiz', schema: QuizSchema }]) ],
-  controllers: [QuizController],
-  providers: [QuizService],
+	imports: [MongooseModule.forFeature([{ name: 'Quiz', schema: QuizSchema }])],
+	controllers: [QuizController],
+	providers: [QuizService],
 })
-export class QuizModule {}
+export class QuizModule { }
