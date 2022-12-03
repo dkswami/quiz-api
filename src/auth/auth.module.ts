@@ -3,6 +3,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from 'src/user/user.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { JwtStrategy } from './guards/jwt-strategy';
+import { JwtGuard } from './guards/jwt-guard';
 
 @Module({
 	imports: [UserModule, JwtModule.registerAsync({
@@ -12,6 +14,6 @@ import { AuthService } from './auth.service';
 		})
 	})],
 	controllers: [AuthController],
-	providers: [AuthService]
+	providers: [AuthService, JwtStrategy, JwtGuard]
 })
 export class AuthModule { }
