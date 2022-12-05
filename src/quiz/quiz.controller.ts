@@ -19,7 +19,7 @@ export class QuizController {
 
 	@UseGuards(JwtGuard)
 	@Get(':id')
-	findOne(@Param('id') id: string ): Promise<Quiz> {
+	findOne(@Param('id') id: string ): Promise<Quiz | any> {
 		return this.quizService.findOne(id);
 	}
 

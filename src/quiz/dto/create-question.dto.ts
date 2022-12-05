@@ -1,9 +1,13 @@
 export class CreateQuestionDto {
 	readonly question: string;
-	readonly answer: string;
 	readonly questionType: string;
 	readonly difficulty: number;
 	readonly marksAwarded: number;
 	readonly marksDeducted: number;
-	readonly options: string[];
+	readonly options: OptionsDto[];
+}
+
+class OptionsDto {
+	readonly option1: string;
+	readonly isCorrect: boolean;
 }

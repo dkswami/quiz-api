@@ -8,12 +8,16 @@ export const QuizSchema = new mongoose.Schema({
 	questions: [
 		{
 			question: String,
-			answer: String,
 			questionType: String,
 			difficulty: Number,
 			marksAwarded: Number,
 			marksDeducted: Number,
-			options: [String],
+			options: [
+				{
+					option1: String, 
+					isCorrect: Boolean
+				}
+			],
 		}
 	]
 })
