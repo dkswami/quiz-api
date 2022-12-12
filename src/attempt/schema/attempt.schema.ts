@@ -23,7 +23,7 @@ export class Attempt {
 	@Prop({ required: true })
 	total: number;	
 
-	@Prop({ type: [{ quesNumber: { type: Number}, currScore: { type: Number} }], required: true })
+	@Prop({ type: [{ quesNumber: { type: Number}, currScore: { type: Number} }], required: true, _id: false })
 	scoreData: { quesNumber: number, currScore: number }[];
 }
 
