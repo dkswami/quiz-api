@@ -3,11 +3,10 @@ interface Question {
 	question: string;
 	questionType: string;
 	difficulty: number;
-	correctAnswers: string[];
 	answers: string[];
 }
 
-export interface Quiz {
+export interface ShowQuiz {
 	id?: string;
 	title: string;
 	description: string;
