@@ -36,6 +36,10 @@ export class QuizService {
 		return this._getQuizWithoutCorrectAnswers(quiz);
 	}
 
+	async findOneForCheck(id: string): Promise<QuizDocument> {
+		return await this.quizModel.findOne({ _id: id });
+	}
+
 	async create(quiz: QuizDocument): Promise<QuizDocument> {
 		const newQuiz = new this.quizModel(quiz);
 		return await newQuiz.save();
@@ -44,5 +48,4 @@ export class QuizService {
 	async delete(id: string): Promise<QuizDocument> {
 		return await this.quizModel.findByIdAndRemove(id);
 	}
-
 }

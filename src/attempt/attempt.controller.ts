@@ -3,6 +3,7 @@ import { JwtGuard } from 'src/auth/guards/jwt-guard';
 import { AttemptService } from './attempt.service';
 import { Attempt } from './interfaces/attempt.interface';
 import { CreateAttemptDto } from './dto/attempt.dto';
+import { CheckAttemptDto } from './dto/checkAttempt.dto';
 
 @Controller('attempt')
 export class AttemptController {
@@ -18,5 +19,11 @@ export class AttemptController {
 	@Post()
 	create(@Body() createNewAttempt: CreateAttemptDto): Promise<Attempt> {
 		return this.attemptService.create(createNewAttempt);
+	}
+
+	@UseGuards(JwtGuard)
+	@Post("/check")
+	checkAttempt(@Body() checkNewAttempt: CheckAttemptDto): Promise<any> {
+		return this.attemptService.checkAttempt(checkNewAttempt);
 	}
 }
